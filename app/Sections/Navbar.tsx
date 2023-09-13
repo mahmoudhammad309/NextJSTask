@@ -41,8 +41,8 @@ const Navbar = () => {
           <Search />
         </div>
         <Box display={"flex"} gap="20px">
-          <Dropdown options={["🇵🇸 arabic", "🇺🇸 USA"]} />
-          <Dropdown options={["💵 USD", "💶 EUR"]} />
+          <Dropdown options={[" 🇬🇧 English", "🇵🇸 Arabic" ]} lang/>
+          <Dropdown options={["💵 USD", "💶 ILS"]} lang={false}/>
         </Box>
       </Toolbar>
     </AppBar>
