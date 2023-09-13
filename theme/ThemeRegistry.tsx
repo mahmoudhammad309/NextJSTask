@@ -12,6 +12,7 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
+
 const themeOptions: ThemeOptions = {
   typography: {
     fontSize: 16,
@@ -25,8 +26,13 @@ const themeOptions: ThemeOptions = {
       main: "#554AF0",
       dark: "#151875",
     },
+    secondary: {
+      main: '#554AF0',
+      dark: '#ba000d',
+      contrastText: '#000',
+    },
     text: {
-      primary: "#121212",
+      primary: "#151875",
       secondary: "#707070",
     },
   },

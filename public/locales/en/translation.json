@@ -7,5 +7,7 @@
   "offers":"Offers",
   "contactUs":"Contact us",
   "seeAll":"See all",
-  "electronics":"Electronics"
+  "electronics":"Electronics",
+  "app_title": "i18n News Reader"
+
 }

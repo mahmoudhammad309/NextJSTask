@@ -2,40 +2,47 @@ import React, { useState, useEffect } from "react";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { SelectChangeEvent } from "@mui/material/Select";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 import { changeLang } from "../GlobalRedux/Features/langSlice";
+import { RootState } from "../GlobalRedux/store";
+
 interface DropdownProps {
   options: string[];
-  lang: boolean;
+  value: any;
+  onChange: any;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ options, lang }) => {
-  const [selectedCurrency, setSelectedCurrency] = useState<string>(
-    options[0] || ""
-  );
-  const dispatch = useDispatch();
+const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  onChange,
+  value,
+}) => {
+  // const [selectedCurrency, setSelectedCurrency] = useState<string>(
+  //   options[0] || ""
+  // );
+  // const dispatch = useDispatch();
+  // const langd = useSelector((state: RootState) => state.lang.lang);
 
-  const handleChange = (
-    e: SelectChangeEvent<string>
-  ) => {
-    const value = e.target.value;
-    setSelectedCurrency(value);
-    if(lang) {
-      dispatch(changeLang(value));
-    }
-  };
+  // const handleChange = (e: SelectChangeEvent<string>) => {
+  //   const value = e.target.value;
+  //   setSelectedCurrency(value);
+  //   if (lang) {
+  //     dispatch(changeLang(value));
+  //     console.log(langd);
+  //   }
+  // };
 
-  useEffect(() => {
-    setSelectedCurrency(options[0] || "");
-  }, [options]);
+  // useEffect(() => {
+  //   setSelectedCurrency(options[0] || "");
+  // }, [options]);
 
   return (
     <div style={{ width: "150px" }}>
       <Select
         variant="outlined"
         fullWidth
-        value={selectedCurrency}
-        onChange={handleChange}
+        value={value}
+        onChange={onChange}
         sx={{
           border: "0",
         }}
