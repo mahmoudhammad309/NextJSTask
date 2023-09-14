@@ -24,7 +24,7 @@ const Search = () => {
             borderRadius: "100px",
             border: "1px solid #726BCF",
             height: 40,
-            width: 344,
+            maxWidth: 344,
           },
           endAdornment: (
             <InputAdornment position="end">

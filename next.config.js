@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  publicRuntimeConfig: {
-    localeSubpaths: {
-      en: 'en',
-      ar: 'ar',
+    async redirects() {
+      return [
+        {
+          source: '/',
+          destination: '/en',
+          permanent: true,
+        },
+      ];
     },
-  },
-};
+  };
