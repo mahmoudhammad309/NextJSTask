@@ -6,8 +6,8 @@ import {
   RightArrowIcon,
   AnchorArrowIcon,
 } from "../assets/icons";
-import { useTranslation } from "react-i18next";
-
+import { useSelector } from "react-redux";
+import { RootState } from "../GlobalRedux/store";
 import Category from "../components/Category";
 import phone from "../assets/images/phone.png";
 import airPods1 from "../assets/images/airPods1.png";
@@ -47,7 +47,8 @@ const data = [
   },
 ];
 const CategoriesSlider: React.FC = () => {
-  const { t } = useTranslation();
+  const langData = useSelector((state: RootState) => state.lang.langData);
+  const lang = useSelector((state: RootState) => state.lang.lang);
 
   const settings = {
     arrow: true,
@@ -93,7 +94,7 @@ const CategoriesSlider: React.FC = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <Typography>{t("categories")}</Typography>
+        <Typography>{langData?.categories}</Typography>
         <Link href="#" underline="hover">
           <Box
             sx={{
@@ -102,7 +103,7 @@ const CategoriesSlider: React.FC = () => {
               justifyContent: "center",
             }}
           >
-            <span>{t("seeAll")}</span>
+            <span>{langData?.seeAll}</span>
             <span
               style={{
                 display: "flex",

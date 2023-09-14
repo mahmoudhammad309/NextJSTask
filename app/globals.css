@@ -13,15 +13,22 @@ body {
   overflow-x: hidden;
 }
 
-/* HeaderSlider.css */
-.custom-slider-container .custom-slide {
+ .custom-slide {
   padding: 10px; 
 }
 
-/* Optional: To center the image within each slide */
-.custom-slider-container .custom-slide .slide-content {
+.slide-content {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+.slide-content img{
+transform: scale(1.2);
+}
+
+@media (max-width: 599px) {
+  .mui-heg063-MuiTabs-flexContainer {
+    flex-direction: column !important;
+  }
 }

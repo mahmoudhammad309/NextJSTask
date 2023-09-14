@@ -28,52 +28,48 @@ const data = [
 ];
 
 const HeaderSlider: React.FC = () => {
-  // const settings = {
-  //   className: "center",
-  //   centerMode: true,
-  //   infinite: true,
-  //   centerPadding: "60px",
-  //   slidesToShow: 1,
-  //   speed: 500,
-  //       autoplay: true, // Enable automatic sliding
-  //   autoplaySpeed: 2000, 
-  //   responsive: [
-  //     {
-  //       breakpoint: 500,
-  //       settings: {
-  //         slidesToShow: 1,
-  //       },
-  //     },
-  //   ],
-  // };
   const settings = {
-    autoplay: true,
-    autoplaySpeed: 3000,
+    className: "center",
     centerMode: true,
-    centerPadding: '0',
     infinite: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    focusOnSelect: true,
-    arrows: false,
+    centerPadding: "60px",
+    slidesToShow: 1,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
+
   return (
-    <div
-      // sx={{
-      //   width: "100%",
-      //   height: "auto",
-      //   margin: "60px 0",
-      // }}
-      className="image-slider"
+    <Box
+      sx={{
+        width: "100%",
+        height: "auto",
+        margin: "60px 0"
+      }}
+      className="custom-slider-container"
     >
       <Slider {...settings}>
-        {data.map((item, index) => (
-          <div key={index} className="image-slide">
-          <img src={item.img} alt={`Slide ${index + 1}`} />
-        </div>
+        {data.map((item) => (
+          <Box sx={{
+            minHeight: "472px",
+            transform: "transform 0.3s ease"
+          }}
+          key={item.id} className="custom-slide">
+            <Image style={{
+              width: "100%",
+            }} width={900} alt="img" src={item.img} />
+          </Box>
         ))}
       </Slider>
-    </div>
+    </Box>
   );
 };
 
